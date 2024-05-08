@@ -63,6 +63,31 @@ print("Dictionary Copy: ", dict_copy)
 # Perform various operations like adding, removing, and modifying elements.
 # Write your code below:
 
+student = {
+    'name': 'Raju',
+    'roll': '26',
+    'grades': {'Math': 95, 'Science': 80, 'English': 70}
+}
+
+print("Student Details:")
+print(student)
+
+# Adding 
+student['email'] = 'raju45@gmail.com'
+print("Adding Email:")
+print(student)
+
+# Removing 
+removed_val = student.pop('email')
+print("After Removing email:")
+print(removed_val)
+print(student)
+
+# Modifying 
+student['roll'] = 12
+print("After Modifying Roll:")
+print(student)
+
 
 # Section 2: Integrating Dictionaries with Lists and Tuples
 # ---------------------------------------------------------
