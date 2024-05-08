@@ -60,6 +60,12 @@ print(user_input.lstrip())  # Removes leading whitespace
 # Assignment 1: Create a string that contains a simple bio data like name, age, and country. Extract each piece of information and print them separately.
 # Write your code below:
 
+bio_data = "Name: Raju, Age: 30, Country: Bangladesh"
+info = bio_data.split(', ')
+for ans in info:
+    key, value = ans.split(': ')
+    print(f"{key} : {value}")
+
 
 # Section 2: Advanced String Operations
 # -------------------------------------
@@ -78,6 +84,18 @@ print(old_greeting)
 
 # Assignment 2: Create a formatted string that includes data from a list or dictionary. For example, use a dictionary to store a person's information and format a string to include it.
 # Write your code below:
+
+
+# Dictionary containing person's information
+person_info = {
+    'name': 'Raju',
+    'age': 30,
+    'country': 'Bangladesh'
+}
+
+format_string = f"Name: {person_info['name']}, Age: {person_info['age']}, Country: {person_info['country']}"
+
+print(format_string)
 
 
 # Section 3: Advanced Slicing and Multiline Strings
