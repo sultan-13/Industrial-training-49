@@ -73,6 +73,22 @@ list_length = len(simple_list)
 # Assignment 1: Create a 2D list representing a 3x3 matrix and perform operations like accessing, modifying, and iterating through it.
 # Write your code below:
 
+new_matrix = [[11, 12, 13], [14, 15, 16], [17,18,19]]
+
+#Accesing an element
+third_row_second_col = new_matrix[2][1]
+print("After Accessing : ",third_row_second_col)
+
+#Modifing an element
+new_matrix[1][2] = 50
+print("After Modifying : ",new_matrix)
+
+#Iterating the matrix
+print("After Iterating : ")
+for row in new_matrix:
+    for col in row:
+        print(col, end=" ")
+    print()
 
 # Section 2: Python Tuples
 # ------------------------
@@ -97,6 +113,19 @@ tuple_dict = {simple_tuple: "My Tuple"}
 # Write your code below:
 
 
+person_info = ("sultan", 25, "sultanularafin56@gmail.com")
+
+
+person_dict = {
+    "name": person_info[0],
+    "age": person_info[1],
+    "email": person_info[2]
+}
+
+print("Person's information:")
+print(person_dict)
+
+
 # Section 3: Advanced Applications
 # --------------------------------
 # Dealing with more complex list and tuple structures for real-world applications.
@@ -115,6 +144,16 @@ incremented_matrix = [[cell + 1 for cell in row] for row in matrix]
 
 # Assignment 3: Create a list of tuples, where each tuple contains a student's name and their grade. Sort this list by grades.
 # Write your code below:
+
+
+students = [("Shakib", 85), ("Mushfiq", 78), ("Kohli", 92), ("Butler", 80)]
+
+
+students.sort(key=lambda x: x[1], reverse=True)
+
+print("Sorted list of students by grades:")
+for student in students:
+    print(student[0], ":", student[1])
 
 
 # Congratulations on completing the advanced section on Python lists and tuples!
