@@ -111,7 +111,6 @@ print(f"Ticket price: ${price}")
 # Assignment 3: Write a script that simulates a basic login system. Check username and password correctness.
 # Write your code below:
 
-# Database of username-password pairs (simulated)
 database = {'user1': 'password1', 'user2': 'password2', 'user3': 'password3'}
 
 username = 'user1'
