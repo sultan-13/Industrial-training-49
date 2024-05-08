@@ -89,10 +89,15 @@ _bad_name = 23
 # Assignment 3: Fix the bad variable name above and create three more variables with good naming practices.
 # Write your code below:
 
-age = 23
+age = 25
 favourite_color = "Black"
 height_in_inches = 68
 is_adult = True
+
+print(age)
+print(favourite_color)
+print(height_in_inches)
+print(is_adult)
 
 # Section 4: Python's Dynamic Typing
 # ----------------------------------
