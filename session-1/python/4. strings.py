@@ -127,6 +127,19 @@ print(formatted_string)
 # Write your code below:
 
 
+def cnt_character(string):
+    count = {}
+    for char in string:
+        if char in count:
+            count[char] += 1
+        else:
+            count[char] = 1
+    return count
+
+string = "access"
+print(cnt_character(string))
+
+
 # Section 4: Regular Expressions
 # ------------------------------
 # Regular expressions are used for pattern matching in strings.
