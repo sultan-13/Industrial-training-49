@@ -85,8 +85,6 @@ print(old_greeting)
 # Assignment 2: Create a formatted string that includes data from a list or dictionary. For example, use a dictionary to store a person's information and format a string to include it.
 # Write your code below:
 
-
-# Dictionary containing person's information
 person_info = {
     'name': 'Raju',
     'age': 30,
