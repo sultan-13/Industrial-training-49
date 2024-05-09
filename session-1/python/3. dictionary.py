@@ -32,7 +32,7 @@ simple_dict['country'] = 'USA'  # Adds a new key-value pair
 # keys(), values(), items()
 # print(simple_dict.keys())  # Prints all keys
 # print(simple_dict.values())  # Prints all values
-# print(simple_dict.items())  # Prints all key-value pairs as tuples
+#print(simple_dict.items())  # Prints all key-value pairs as tuples
 
 # get()
 print(simple_dict.get('name'))  # Returns 'John'
