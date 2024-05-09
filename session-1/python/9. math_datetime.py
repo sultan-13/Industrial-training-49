@@ -71,7 +71,31 @@ print(f"Age is: {age} years")
 # Assignments
 # -----------
 # Assignment 1: Write a function that calculates compound interest using the formula A = P(1 + r/n)^(nt).
+
+def interest(principal, rate, time, period):
+    amount = principal * (1 + rate / period) ** (period * time)
+    return amount
+
+principal = 1500  
+rate = 0.08       
+time = 6          
+period = 10  
+
+future_amount = interest(principal, rate, time, period)
+print("Future amount :", round(future_amount, 1))
+
 # Assignment 2: Create a script that prints the current time and updates every second.
+
+import datetime
+import time
+
+def print_current_time():
+    while True:
+        current_time = datetime.datetime.now()
+        print("Current_Time:", current_time.strftime("%H:%M:%S"),end="\r")
+        time.sleep(1)
+        
+print_current_time()
 
 # Congratulations on completing the in-depth section on Python's math and datetime modules!
 # Review the assignments, try to solve them, and check your understanding of these powerful tools.
