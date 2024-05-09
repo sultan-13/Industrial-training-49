@@ -111,6 +111,20 @@ coordinates_info = {(35.6895, 139.6917): "Tokyo", (40.7128, -74.0060): "New York
 # Assignment 2: Create a dictionary where keys are student names and values are lists of grades. Calculate the average grade for each student.
 # Write your code below:
 
+student_grades = {
+    "shakib": [90, 80, 78],
+    "kohli": [60, 82, 75],
+    "surya": [95, 70, 92],
+    "head": [60, 85, 75]
+}
+
+average_grades = {}
+for student, grades in student_grades.items():
+    average_grades[student] = sum(grades) / len(grades)
+
+print("Average grades for each student:")
+for student, average_grade in average_grades.items():
+    print(f"{student}: {average_grade:.2f}")
 
 # Congratulations on completing the advanced section on Python dictionaries!
 # Review the assignments, try to solve them, and check your understanding of this powerful data structure.
