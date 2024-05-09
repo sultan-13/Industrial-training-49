@@ -38,7 +38,7 @@ modified_string = simple_string.replace('learners', 'developers')
 
 marks = "80: 83: 70: 48: 47"
 marks_list = marks.split(': ')  # Splits the string into a list of marks
-# print("Array of marks:", marks_list)
+print("Array of marks:", marks_list)
 
 words = simple_string.split(',')  # Splits the string into a list of words
 print("Array of words:", words)

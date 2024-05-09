@@ -73,22 +73,28 @@ list_length = len(simple_list)
 # Assignment 1: Create a 2D list representing a 3x3 matrix and perform operations like accessing, modifying, and iterating through it.
 # Write your code below:
 
-new_matrix = [[11, 12, 13], [14, 15, 16], [17,18,19]]
+matrix = [[1,2,3], [4,5,6], [7,8,9]]
 
-#Accesing an element
-third_row_second_col = new_matrix[2][1]
-print("After Accessing : ",third_row_second_col)
+print(matrix[2][1])
 
-#Modifing an element
-new_matrix[1][2] = 50
-print("After Modifying : ",new_matrix)
+matrix.append([10,11,12])
+print(matrix)
 
-#Iterating the matrix
-print("After Iterating : ")
-for row in new_matrix:
-    for col in row:
-        print(col, end=" ")
-    print()
+matrix.insert(2,[13,14,15])
+
+print(matrix)
+
+matrix.remove([13,14,15])
+
+print(matrix)
+
+matrix.pop()
+print(matrix)
+
+i=1
+for row in matrix:
+    print("Row ",i," :",row)
+    i+=1
 
 # Section 2: Python Tuples
 # ------------------------
@@ -113,17 +119,21 @@ tuple_dict = {simple_tuple: "My Tuple"}
 # Write your code below:
 
 
-person_info = ("sultan", 25, "sultanularafin56@gmail.com")
+student_info = ("Sultan",25,3.803,True)
 
-
-person_dict = {
-    "name": person_info[0],
-    "age": person_info[1],
-    "email": person_info[2]
+student_dict = {
+    'name' : student_info[0],
+    'age' : student_info[1],
+    'id' : student_info[2],
+    'is_student' : student_info[3]
 }
 
-print("Person's information:")
-print(person_dict)
+
+for xx in student_dict:
+    print(student_dict[xx])
+
+for xx, yy in student_dict.items():
+    print(xx," : ",yy)
 
 
 # Section 3: Advanced Applications
@@ -146,14 +156,14 @@ incremented_matrix = [[cell + 1 for cell in row] for row in matrix]
 # Write your code below:
 
 
-students = [("Shakib", 85), ("Mushfiq", 78), ("Kohli", 92), ("Butler", 80)]
+student_info = [("Sultan",3.8),("miskat",3.7),("Emon",3.9),("ishrak",3.78)]
 
+sorting_by_grade = sorted(student_info,key=lambda x:x[1])
 
-students.sort(key=lambda x: x[1], reverse=True)
+print(sorting_by_grade)
 
-print("Sorted list of students by grades:")
-for student in students:
-    print(student[0], ":", student[1])
+for xx in sorting_by_grade:
+    print(xx[0], " : ",xx[1])
 
 
 # Congratulations on completing the advanced section on Python lists and tuples!
