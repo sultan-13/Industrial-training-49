@@ -90,7 +90,42 @@ with open('users.json', 'r') as file:
 # Assignments
 # -----------
 # Assignment 1: Write a script that reads a CSV file containing product information and converts it into a JSON file.
+with open('Product.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(["Name", "Price", "Quantity"])
+    writer.writerow(["Rice", 15, 900])
+    writer.writerow(["Daal", 10, 1950])
+    writer.writerow(["Juice",15, 300])
+
+with open('Product.csv' , 'r') as file:
+    reader = csv.DictReader(file)
+    products = []
+    for row in reader:
+        products.append(row)
+
+with open('product.json' , 'w') as file:
+    json.dump(products, file)
+
+with open('product.json' , 'r') as file:
+    users = json.load(file)
+    print(users)
+
 # Assignment 2: Create a log file writer that appends log messages to a file with timestamps.
+
+import time
+log_file = 'log.txt'
+def log(message):
+    timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+    with open(log_file, 'a') as f:
+        f.write(f'{timestamp} - {message}\n')
+    
+    print(f'{timestamp} - {message}')
+
+log('Starting application...')
+log('Loading data...')
+log('Processing data...')
+log('Saving results...')
+log('Exiting application...')
 
 # Congratulations on completing the comprehensive section on Python file I/O and JSON handling!
 # Review the assignments, try to solve them, and check your understanding of file operations and data formats.
