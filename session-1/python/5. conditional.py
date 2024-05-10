@@ -114,12 +114,12 @@ print(f"Ticket price: ${price}")
 database = {'user1': 'password1', 'user2': 'password2', 'user3': 'password3'}
 
 username = 'user1'
-password = 'password1'
+password = 'password2'
 
-if (username in database) and (database[username] == password):
-    print("Login successful! Welcome,", username)
+if database.get(username) == password:
+    print("Login successful!")
 else:
-    print("Invalid username or password. Please try again later.")
+    print("Invalid username or password.")
 
 
 
