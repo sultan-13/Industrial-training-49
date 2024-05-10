@@ -81,6 +81,35 @@ print("Pip examples: See comments for usage.")
 # Assignments
 # -----------
 # Assignment 1: Create a simple package with at least two modules, each containing one function.
+
+import os
+
+# Create the directory for the package
+package_name = "my_package"
+os.makedirs(package_name, exist_ok=True)
+
+# Create module1.py
+module1_content = """
+def greet():
+    print("Hello from Module 1!")
+"""
+with open(os.path.join(package_name, "module1.py"), "w") as f:
+    f.write(module1_content)
+
+# Create module2.py
+module2_content = """
+def farewell():
+    print("Goodbye from Module 2!")
+"""
+with open(os.path.join(package_name, "module2.py"), "w") as f:
+    f.write(module2_content)
+
+# Create __init__.py
+init_content = ""
+with open(os.path.join(package_name, "__init__.py"), "w") as f:
+    f.write(init_content)
+
+print("Package structure created successfully.")
 # Assignment 2: Use pip to install any library that is new to you and write a small script to explore its functionality.
 
 # Congratulations on completing the comprehensive section on Python's modules, packages, libraries, and pip!
