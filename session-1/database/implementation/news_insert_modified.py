@@ -107,6 +107,7 @@ def insert_publisher(connection, name, email):
 def insert_news(connection, category_id, reporter_id, publisher_id, datetime, title, body, link):
     """
     Inserts a new news article into the news table.
+
     Parameters
     ----------
     connection : mysql.connector.connection.MySQLConnection
@@ -191,21 +192,4 @@ if __name__ == "__main__":
     if conn is not None:
         insert_category(conn, "Politics", "All news related to politics")
         insert_reporter(conn, "John Doe", "test@example.com")
-
-  # Add more insert calls for other tables
-       
-        insert_category(conn, "Sports", "All news related to sports")
-        insert_reporter(conn, "John Sam", "john@example.com")
-
-        insert_publisher(conn, "Prothom Alo", "p_alo@gmail.com")
-        insert_publisher(conn, "Daily Star", "d_star@gmail.com")
-
-        insert_news(conn, 1, 1, 1, "2022-01-01 00:00:00", "Test News Article 1", "This is the body of the first news article.", "https://example.com/news-article-1")
-        insert_news(conn, 2, 2, 2, "2022-01-02 00:00:00", "Test News Article 2", "This is the body of the second news article.", "https://example.com/news-article-2")
-
-        insert_image(conn, 1, "https://upload.wikimedia.org/wikipedia/commons/0/09/INews.png")
-        insert_image(conn, 2, "https://upload.wikimedia.org/wikipedia/commons/0/09/INews.png")
-
-        insert_summary(conn, 1, "This is the summary of Messi's Career: Penalty & tap in; the end ")
-        insert_summary(conn, 1, "This is the summary of Ronaldo's Career: Penalty & tap in; the end ")
-      
+        # Add more insert calls for other tables
