@@ -14,18 +14,35 @@ import requests
 def get_example():
     """
     Demonstrates a simple GET request using the `requests` library.
-    Fetches data from a public API and prints the JSON response.
+    Fetches data from a public API and prints the titles of all posts.
     """
-    url = 'https://jsonplaceholder.typicode.com/posts/1'
+    url = 'https://jsonplaceholder.typicode.com/posts'
     response = requests.get(url)
-    
-    # Check if the request was successful
-    if response.status_code == 200:
-        print("GET request successful!")
-        # Print response content
-        print(response.json())
-    else:
-        print("Failed to retrieve data")
+
+    # My Assignment modificaion
+
+    try:
+        if response.status_code == 200:
+            print("GET request successful!")
+            posts = response.json()
+
+
+            for itr in range(min(70, len(posts))):
+                print(f"Title {itr + 1} - {posts[itr]['title']}")
+        else:
+            print("Failed to retrieve data")
+
+    except requests.exceptions.HTTPError as errh:
+        print(f"HTTP Error: {errh}")
+    except requests.exceptions.ConnectionError as errc:
+        print(f"Connection Error: {errc}")
+    except requests.exceptions.Timeout as errt:
+        print(f"Timeout Error: {errt}")
+    except requests.exceptions.RequestException as err:
+        print(f"Error: {err}")
+    except Exception as e:
+        print(f"Unknown Error: {e}")
+
 
 def post_example():
     """
@@ -38,15 +55,24 @@ def post_example():
         'body': 'bar',
         'userId': 10
     }
-    response = requests.post(url, json=data)
     
-    # Check if the request was successful
-    if response.status_code == 201:
+    try:
+        response = requests.post(url, json=data)
+        response.raise_for_status()  
+        
         print("POST request successful!")
-        # Print response content
         print(response.json())
-    else:
-        print("Failed to post data")
+    except requests.exceptions.HTTPError as errh:
+        print(f"HTTP Error: {errh}")
+    except requests.exceptions.ConnectionError as errc:
+        print(f"Connection Error: {errc}")
+    except requests.exceptions.Timeout as errt:
+        print(f"Timeout Error: {errt}")
+    except requests.exceptions.RequestException as err:
+        print(f"Error: {err}")
+    except Exception as e:
+        print(f"Unknown Error: {e}")
+
 
 def main():
     """
@@ -54,8 +80,8 @@ def main():
     """
     print("Executing GET example...")
     get_example()
-    print("\nExecuting POST example...")
-    post_example()
+    # print("\nExecuting POST example...")
+    # post_example()
 
 if __name__ == "__main__":
     # main()
@@ -65,9 +91,9 @@ if __name__ == "__main__":
 
 # Assignments
 # 1. Modify the GET Example: Change the get_example function to fetch a list of posts instead of just one. Analyze the JSON structure and print out the titles of all posts.
-
+    
 # 2. Error Handling: Add error handling to both functions to manage exceptions like connection errors or timeouts.
-
+     # both Done above
 
 # Advanced requests
 """
@@ -123,7 +149,7 @@ def post_with_authentication():
     headers = {
         'User-Agent': 'My User Agent 1.0'
     }
-    auth = ('user', 'pass')  # Replace with actual username and password
+    auth = ('root', 'root')  
     
     try:
         response = requests.post(url, json=data, headers=headers, auth=auth)
@@ -151,12 +177,11 @@ def main():
     post_example()
 
     # Advanced usages
-    print("Executing GET request with custom headers...")
-    get_with_headers()
-    print("\nExecuting POST request with authentication...")
-    post_with_authentication()
+    # print("Executing GET request with custom headers...")
+    # get_with_headers()
+    # print("\nExecuting POST request with authentication...")
+    # post_with_authentication()
 
 if __name__ == "__main__":
     main()
-
 
