@@ -19,16 +19,18 @@ def get_example():
     url = 'https://jsonplaceholder.typicode.com/posts'
     response = requests.get(url)
 
-    # My Assignment modificaion
-
+    # Assignment 1 & 2 solved :)
     try:
         if response.status_code == 200:
             print("GET request successful!")
-            posts = response.json()
+        posts = response.json()
 
 
-            for itr in range(min(70, len(posts))):
-                print(f"Title {itr + 1} - {posts[itr]['title']}")
+        for idx, post in enumerate(posts, 1):
+            print(f"post {idx}: title: {post['title']}")
+            if idx == 50:
+               break
+
         else:
             print("Failed to retrieve data")
 
@@ -58,7 +60,7 @@ def post_example():
     
     try:
         response = requests.post(url, json=data)
-        response.raise_for_status()  
+        response.raise_for_status()  # Raises an HTTPError for bad responses
         
         print("POST request successful!")
         print(response.json())
@@ -149,7 +151,7 @@ def post_with_authentication():
     headers = {
         'User-Agent': 'My User Agent 1.0'
     }
-    auth = ('root', 'root')  
+    auth = ('root', 'root')  # Replace with actual username and password
     
     try:
         response = requests.post(url, json=data, headers=headers, auth=auth)
@@ -184,4 +186,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

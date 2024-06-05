@@ -83,6 +83,3 @@ if __name__ == "__main__":
                 process_and_insert_news_data(conn, publisher_website, publisher, title, reporter, news_datetime, category, news_body, images, url)
             else:
                 print(f"Failed to scrape the news article from URL: {url}")
-        conn.close()
-    else:
-        print("Failed to create database connection")
