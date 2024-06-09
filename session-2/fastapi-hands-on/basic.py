@@ -9,31 +9,74 @@ news = {
     1:
     {
         "id": 1,
-        "title": "Top 10 programming languages",
-        "content": "Python is the most popular programming language according to the TIOBE index. Other popular",
-        "author": "Arman"
+        "title": "The Formation of the Avengers: Earth's Mightiest Heroes",
+        "content": "A look into how the Avengers were formed, bringing together a team of superheroes to protect Earth.",
+        "author": "Nick Fury"
     },
     2:
     {
         "id": 2,
-        "title": "LLM race in modern era",
-        "content": "Content on modern LLM models both close & open source",
-        "author": "Ibrahim"
+        "title": "Iron Man: The Genius, Billionaire, Playboy, Philanthropist",
+        "content": "Exploring the journey of Tony Stark from a billionaire playboy to the armored hero, Iron Man.",
+        "author": "Pepper Potts"
     },
     3:
     {
         "id": 3,
-        "title": "Latest LLM models from Mistral!!!",
-        "content": "ontent on modern LLM models both close & oper",
-        "author": "Sultan"
+        "title": "The Legacy of Captain America",
+        "content": "The story of Steve Rogers, the super-soldier who became the symbol of hope and justice as Captain America.",
+        "author": "Bucky Barnes"
     },
     4:
     {
         "id": 4,
-        "title": "What's the Google calls on LLM!!",
-        "content": "ontent on modern LLM models both close & ope",
-        "author": "Sultan"
+        "title": "The Incredible Hulk: Strength and Struggle",
+        "content": "An analysis of Bruce Banner's transformation into the Hulk and his struggle to control his immense power.",
+        "author": "Betty Ross"
     },
+    5:
+    {
+        "id": 5,
+        "title": "The Enigmatic Black Widow",
+        "content": "Delving into the past and skills of Natasha Romanoff, the Black Widow, and her role in the Avengers.",
+        "author": "Clint Barton"
+    },
+    6:
+    {
+        "id": 6,
+        "title": "Thor: The God of Thunder",
+        "content": "Exploring Thor's journey from Asgardian prince to Avenger, and his battles to protect both Earth and Asgard.",
+        "author": "Jane Foster"
+    },
+    7:
+    {
+        "id": 7,
+        "title": "Hawkeye: The Sharpest Shooter",
+        "content": "A closer look at Clint Barton, the master archer known as Hawkeye, and his contributions to the Avengers.",
+        "author": "Laura Barton"
+    },
+    8:
+    {
+        "id": 8,
+        "title": "The Rise of the Scarlet Witch",
+        "content": "Exploring Wanda Maximoff's transformation into the Scarlet Witch and her powerful abilities.",
+        "author": "Vision"
+    },
+    9:
+    {
+        "id": 9,
+        "title": "Vision: The Synthetic Avenger",
+        "content": "The creation and evolution of Vision, the android Avenger with a mind and heart of his own.",
+        "author": "Wanda Maximoff"
+    },
+    10:
+    {
+        "id": 10,
+        "title": "The Battle of New York: The Avengers' First Test",
+        "content": "An in-depth look at the Battle of New York, where the Avengers first united to defend Earth from alien invasion.",
+        "author": "Phil Coulson"
+    }
+
 }
 
 
@@ -45,8 +88,11 @@ class News(BaseModel):
 
 @app.get("/")
 def hearbeat():
-    return {"message": "Hey! What's up?"}
+    return {"message": "I'm up and running and shouting!"}
 
+@app.get("/news")
+def all_news():
+    return news
 
 
 @app.get("/news")
@@ -71,9 +117,6 @@ def news_filter_by_author_title(author: str, title_contains: str = None):
             return {"data": f"No news found from author {author} with title containing {title_contains}"}
     return filtered_news
 
-@app.get("/news")
-def all_news():
-    return news
 
 
 @app.get("/news/{id}")
